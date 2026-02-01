@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="nul - 自然と調和するフレグランスブランド。since 2025">
+    <title>nul - Natural Fragrance Brand</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <div class="loading-logo">
+            <img src="images/logo.jpg" alt="nul">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="#hero">nul</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#ingredients">Ingredients</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-bg-gradient"></div>
+            <div class="hero-bg-noise"></div>
+        </div>
+
+        <!-- Main Hero Content -->
+        <div class="hero-content">
+            <div class="hero-text">
+                <!-- Animated Main Title -->
+                <div class="hero-main-title">
+                    <div class="title-line">
+                        <div class="title-line-inner">
+                            <span class="title-word" data-delay="0">We</span>
+                            <span class="title-word" data-delay="1">create</span>
+                        </div>
+                    </div>
+                    <div class="title-line">
+                        <div class="title-line-inner">
+                            <span class="title-word large" data-delay="2">Natural</span>
+                        </div>
+                    </div>
+                    <div class="title-line">
+                        <div class="title-line-inner">
+                            <span class="title-word large" data-delay="3">Fragrance.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Japanese Tagline -->
+                <div class="hero-tagline">
+                    <div class="tagline-mask">
+                        <p class="tagline-text">自然の本質を追求し、心に響く香りを創造する。</p>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="hero-description-wrap">
+                    <p class="hero-description">
+                        nulは、余分なものを削ぎ落とし、<br>
+                        本質だけを抽出することで、<br>
+                        真に美しい香りを生み出します。
+                    </p>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hero-cta-wrap">
+                    <a href="#products" class="hero-cta">
+                        <span class="cta-text">Discover Collection</span>
+                        <span class="cta-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll">
+            <div class="scroll-text">
+                <span>S</span><span>c</span><span>r</span><span>o</span><span>l</span><span>l</span>
+            </div>
+            <div class="scroll-line"></div>
+        </div>
+
+        <!-- Side Credits -->
+        <div class="hero-side-text">
+            <span>since 2025</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image reveal-left">
+                <img src="images/hero.png" alt="nul fragrance">
+                <div class="about-image-overlay"></div>
+            </div>
+            <div class="about-content reveal-right">
+                <span class="section-label">About nul</span>
+                <h2 class="section-title">
+                    無から生まれる<br>
+                    本質的な美しさ
+                </h2>
+                <p class="about-text">
+                    「nul」という名は、フランス語で「ゼロ」を意味します。
+                    私たちは余分なものを削ぎ落とし、自然の本質だけを抽出することで、
+                    心に響く香りを創り出します。
+                </p>
+                <p class="about-text">
+                    2025年、東京で誕生したnulは、
+                    日本の繊細な美意識と世界の香料文化を融合させ、
+                    新しいフレグランスの形を提案し続けています。
+                </p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-label">% Natural</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="12">0</span>
+                        <span class="stat-label">Fragrances</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="2025">0</span>
+                        <span class="stat-label">Since</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy" id="philosophy">
+        <div class="philosophy-bg"></div>
+        <div class="philosophy-content">
+            <span class="section-label reveal">Our Philosophy</span>
+            <h2 class="philosophy-title reveal">
+                Less is More
+            </h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-item reveal">
+                    <div class="philosophy-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M24 14V24L30 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Timeless</h3>
+                    <p>時代を超えて愛される、普遍的な香りを追求します。</p>
+                </div>
+                <div class="philosophy-item reveal">
+                    <div class="philosophy-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path
+                                d="M24 4C24 4 14 14 14 24C14 29.5228 18.4772 34 24 34C29.5228 34 34 29.5228 34 24C34 14 24 4 24 4Z"
+                                stroke="currentColor" stroke-width="1.5" />
+                            <path d="M24 34V44" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <h3>Pure</h3>
+                    <p>不要な成分を排除し、純粋な自然のエッセンスだけを。</p>
+                </div>
+                <div class="philosophy-item reveal">
+                    <div class="philosophy-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L28 16H40L30 24L34 36L24 28L14 36L18 24L8 16H20L24 4Z" stroke="currentColor"
+                                stroke-width="1.5" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Harmony</h3>
+                    <p>自然と人、心と体の調和を大切にします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="products-header">
+            <span class="section-label reveal">Our Products</span>
+            <h2 class="section-title reveal">Collection</h2>
+            <p class="products-intro reveal">
+                厳選された天然素材から生まれる、<br>
+                12種類のシグネチャーフレグランス
+            </p>
+        </div>
+        <div class="products-showcase">
+            <div class="product-main reveal">
+                <img src="images/collection.png" alt="nul collection">
+            </div>
+        </div>
+        <div class="products-list">
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <img src="images/product1.png" alt="Raw Timber">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Eau de Parfum</span>
+                    <h3 class="product-name">Raw Timber</h3>
+                    <p class="product-desc">森の深くから採れた原木の香り、力強くも穏やかな余韻</p>
+                    <span class="product-price">¥16,500</span>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <img src="images/product2.png" alt="Caresse">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Eau de Parfum</span>
+                    <h3 class="product-name">Caresse</h3>
+                    <p class="product-desc">優しく包み込むような、温かみのある琥珀の香り</p>
+                    <span class="product-price">¥16,500</span>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <img src="images/product3.png" alt="Soft Bouquet">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Eau de Parfum</span>
+                    <h3 class="product-name">Soft Bouquet</h3>
+                    <p class="product-desc">花々が織りなす繊細なハーモニー、柔らかな華やぎ</p>
+                    <span class="product-price">¥16,500</span>
+                </div>
+            </div>
+        </div>
+        <div class="products-cta reveal">
+            <a href="#" class="btn-secondary">View All Products</a>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="ingredients" id="ingredients">
+        <div class="ingredients-container">
+            <div class="ingredients-content reveal-left">
+                <span class="section-label">Natural Ingredients</span>
+                <h2 class="section-title">
+                    自然からの<br>
+                    贈り物
+                </h2>
+                <p class="ingredients-text">
+                    世界中から厳選された天然植物素材。
+                    それぞれの産地で丁寧に収穫され、
+                    その土地特有の気候と土壌が生み出す
+                    豊かな香りを閉じ込めています。
+                </p>
+                <ul class="ingredients-list">
+                    <li>
+                        <span class="ingredient-name">Hinoki</span>
+                        <span class="ingredient-origin">Japan</span>
+                    </li>
+                    <li>
+                        <span class="ingredient-name">Bergamot</span>
+                        <span class="ingredient-origin">Italy</span>
+                    </li>
+                    <li>
+                        <span class="ingredient-name">Sandalwood</span>
+                        <span class="ingredient-origin">India</span>
+                    </li>
+                    <li>
+                        <span class="ingredient-name">Jasmine</span>
+                        <span class="ingredient-origin">France</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="ingredients-image reveal-right">
+                <img src="images/ingredients.png" alt="Natural ingredients">
+                <div class="ingredients-float">
+                    <span>100% Natural</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote">
+        <div class="quote-container">
+            <blockquote class="quote-text reveal">
+                <span>"</span>
+                香りは記憶の扉を開く鍵。<br>
+                一瞬で過去へ、未来へ、<br>
+                そして心の奥深くへ誘う。
+                <span>"</span>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="contact">
+        <div class="newsletter-container">
+            <div class="newsletter-content reveal">
+                <span class="section-label">Stay Connected</span>
+                <h2 class="section-title">Newsletter</h2>
+                <p>新作情報やイベントのご案内をお届けします。</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="images/logo.jpg" alt="nul" class="footer-logo">
+                    <p>Natural Fragrance Brand<br>since 2025</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#">Eau de Parfum</a></li>
+                            <li><a href="#">Room Fragrance</a></li>
+                            <li><a href="#">Body Care</a></li>
+                            <li><a href="#">Gift Set</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="#">Brand Story</a></li>
+                            <li><a href="#">Philosophy</a></li>
+                            <li><a href="#">Ingredients</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Stores</a></li>
+                            <li><a href="#">Shipping</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5" />
+                            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
+                            <circle cx="18" cy="6" r="1" fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 4L10.5 12.5L4 20H6L11.5 13.5L16 20H20L13 11L19 4H17L12 10L8 4H4Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="2" y="4" width="20" height="16" rx="4" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M10 9L15 12L10 15V9Z" fill="currentColor" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="footer-copyright">© 2025 nul. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
