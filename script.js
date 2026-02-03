@@ -2,11 +2,18 @@
 // JavaScript
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Loading Screen
+    // Loading Screen - biotope style
     const loading = document.getElementById('loading');
+
+    // Wait for logo animation to complete, then trigger wipe-up effect
     setTimeout(() => {
         loading.classList.add('hidden');
-    }, 2000);
+
+        // Remove loading screen from DOM after animation completes
+        setTimeout(() => {
+            loading.style.display = 'none';
+        }, 1200);
+    }, 1800);
 
     // Header Scroll Effect
     const header = document.getElementById('header');
@@ -14,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-        
+
         if (currentScroll > 100) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-        
+
         lastScroll = currentScroll;
     });
 
@@ -43,14 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reveal on Scroll
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    
+
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
-        
+
         revealElements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
             const revealPoint = windowHeight * 0.85;
-            
+
             if (elementTop < revealPoint) {
                 element.classList.add('active');
             }
@@ -101,14 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            
+
             if (target) {
                 const headerHeight = header.offsetHeight;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -119,12 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Newsletter Form
     const form = document.getElementById('newsletter-form');
-    
+
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = form.querySelector('input[type="email"]').value;
-            
+
             // Simple validation
             if (email && email.includes('@')) {
                 alert('ご登録ありがとうございます。');
@@ -135,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Parallax Effect for Hero
     const heroBg = document.querySelector('.hero-bg');
-    
+
     if (heroBg) {
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
@@ -145,22 +152,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Product Card Hover Effect with Mouse Tracking
     const productCards = document.querySelectorAll('.product-card');
-    
+
     productCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             const rotateX = (y - centerY) / 20;
             const rotateY = (centerX - x) / 20;
-            
+
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
         });
-        
+
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
         });
@@ -206,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Intersection Observer for Image Lazy Load Effect
     const images = document.querySelectorAll('.about-image img, .product-main img, .ingredients-image img');
-    
+
     const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

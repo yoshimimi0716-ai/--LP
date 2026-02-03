@@ -62,7 +62,7 @@ ul {
     list-style: none;
 }
 
-/* Loading Screen */
+/* Loading Screen - biotope style */
 .loading-screen {
     position: fixed;
     top: 0;
@@ -74,35 +74,65 @@ ul {
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loading-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+    transform-origin: top;
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .loading-screen.hidden {
-    opacity: 0;
-    visibility: hidden;
+    pointer-events: none;
+}
+
+.loading-screen.hidden::after {
+    transform: scaleY(0);
 }
 
 .loading-logo {
-    width: 120px;
-    animation: pulse 2s ease-in-out infinite;
+    width: 100px;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1;
+}
+
+.loading-screen.hidden .loading-logo {
+    opacity: 0;
+    transform: scale(1.2);
 }
 
 .loading-logo img {
     width: 100%;
 }
 
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 0.4;
-        transform: scale(0.95);
+/* Loading logo initial animation */
+@keyframes logoReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
     }
 
     50% {
         opacity: 1;
         transform: scale(1);
     }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.loading-logo {
+    animation: logoReveal 1.5s ease-out forwards;
 }
 
 /* Header */
@@ -114,6 +144,17 @@ ul {
     z-index: 1000;
     padding: 1.5rem 3rem;
     transition: var(--transition-medium);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: headerReveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.9s;
+}
+
+@keyframes headerReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header.scrolled {
@@ -183,36 +224,68 @@ ul {
 .hero {
     position: relative;
     height: 100vh;
-    min-height: 800px;
+    min-height: 900px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
     background: var(--color-bg);
+    padding-top: 150px;
 }
 
-.hero-bg {
+/* Hero Background Video */
+.hero-video-wrap {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-video-overlay {
+    display: none;
+}
+
+.hero-bg {
+    display: none;
 }
 
 .hero-bg-gradient {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 120%;
+    height: 120%;
     background:
-        radial-gradient(ellipse at 80% 20%, rgba(201, 169, 98, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 80%, rgba(168, 155, 140, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(201, 169, 98, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(168, 155, 140, 0.15) 0%, transparent 50%),
         linear-gradient(135deg, var(--color-cream) 0%, var(--color-bg) 50%, rgba(168, 155, 140, 0.1) 100%);
     opacity: 0;
-    animation: fadeInBg 2s ease forwards;
-    animation-delay: 0.3s;
+    animation: fadeInBg 1.5s ease forwards, gradientMove 20s ease-in-out infinite;
+    animation-delay: 1.8s, 1.8s;
+}
+
+@keyframes gradientMove {
+
+    0%,
+    100% {
+        transform: translate(-5%, -5%) scale(1);
+    }
+
+    50% {
+        transform: translate(0%, 0%) scale(1.05);
+    }
 }
 
 .hero-bg-noise {
@@ -236,6 +309,7 @@ ul {
     position: relative;
     z-index: 1;
     padding: 0 8vw;
+    padding-bottom: 150px;
     width: 100%;
     max-width: 1600px;
 }
@@ -244,39 +318,48 @@ ul {
     max-width: 900px;
 }
 
-/* Main Title Animation */
+/* Main Title Animation - biotope style */
 .hero-main-title {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .title-line {
-    overflow: hidden;
-    line-height: 1.1;
+    overflow: visible;
+    line-height: 1.15;
+    position: relative;
+    padding-bottom: 0.05em;
 }
 
 .title-line-inner {
     display: flex;
     flex-wrap: wrap;
     gap: 0 0.4em;
-    transform: translateY(100%);
-    animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(-30px);
+    opacity: 0;
+    animation: fadeDownReveal 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .title-line:nth-child(1) .title-line-inner {
-    animation-delay: 0.8s;
+    animation-delay: 2s;
 }
 
 .title-line:nth-child(2) .title-line-inner {
-    animation-delay: 1s;
+    animation-delay: 2.4s;
 }
 
 .title-line:nth-child(3) .title-line-inner {
-    animation-delay: 1.2s;
+    animation-delay: 2.8s;
 }
 
-@keyframes slideUp {
-    to {
+@keyframes fadeDownReveal {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    100% {
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -306,9 +389,10 @@ ul {
 }
 
 .tagline-mask {
-    transform: translateY(100%);
-    animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 1.4s;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: fadeDownReveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 3.2s;
 }
 
 .tagline-text {
@@ -332,9 +416,9 @@ ul {
     line-height: 2.2;
     letter-spacing: 0.05em;
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 1.6s;
+    transform: translateY(-20px);
+    animation: fadeDownReveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 3.6s;
 }
 
 @keyframes fadeSlideUp {
@@ -347,9 +431,9 @@ ul {
 /* CTA Button */
 .hero-cta-wrap {
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 1.8s;
+    transform: translateY(-20px);
+    animation: fadeDownReveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 4s;
 }
 
 .hero-cta {
@@ -426,18 +510,9 @@ ul {
     }
 }
 
-/* Scroll Indicator */
+/* Scroll Indicator - Hidden */
 .hero-scroll {
-    position: absolute;
-    bottom: 3rem;
-    left: 8vw;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    opacity: 0;
-    animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 2.2s;
+    display: none;
 }
 
 .scroll-text {
@@ -456,27 +531,27 @@ ul {
 }
 
 .scroll-text span:nth-child(1) {
-    animation-delay: 2.3s;
+    animation-delay: 3.3s;
 }
 
 .scroll-text span:nth-child(2) {
-    animation-delay: 2.35s;
+    animation-delay: 3.35s;
 }
 
 .scroll-text span:nth-child(3) {
-    animation-delay: 2.4s;
+    animation-delay: 3.4s;
 }
 
 .scroll-text span:nth-child(4) {
-    animation-delay: 2.45s;
+    animation-delay: 3.45s;
 }
 
 .scroll-text span:nth-child(5) {
-    animation-delay: 2.5s;
+    animation-delay: 3.5s;
 }
 
 .scroll-text span:nth-child(6) {
-    animation-delay: 2.55s;
+    animation-delay: 3.55s;
 }
 
 @keyframes letterFade {
@@ -503,7 +578,7 @@ ul {
     height: 50%;
     background: var(--color-text);
     animation: scrollLineMove 2s ease-in-out infinite;
-    animation-delay: 2.5s;
+    animation-delay: 3.5s;
 }
 
 @keyframes scrollLineMove {
@@ -529,7 +604,7 @@ ul {
     color: var(--color-text-light);
     opacity: 0;
     animation: fadeIn 1s ease forwards;
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 
 @keyframes fadeIn {
