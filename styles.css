@@ -378,10 +378,11 @@ ul {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 300;
-    color: var(--color-hero-heading);
+    color: #ffffff;
     letter-spacing: 0.02em;
     display: inline-block;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+    -webkit-text-stroke: 1px #1a1a1a;
+    text-shadow: none;
 }
 
 .title-word.large {
