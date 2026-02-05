@@ -15,6 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1200);
     }, 1800);
 
+    // Hero Video - Start after tagline animation completes
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        // Tagline animation delay is 3.2s + 1.2s duration = ~4.4s from page load
+        // Adding loading screen time (1.8s), total ~4.5s
+        setTimeout(() => {
+            heroVideo.play().catch(e => {
+                console.log('Video autoplay prevented:', e);
+            });
+        }, 4500);
+    }
+
     // Header Scroll Effect
     const header = document.getElementById('header');
     let lastScroll = 0;
