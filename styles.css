@@ -378,7 +378,7 @@ ul {
     font-family: "AR Pcrystal Mincho JIS", "Shippori Mincho", "Yu Mincho", serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 400;
-    color: #e6e6e6;
+    color: #6b6b6b;
     letter-spacing: 0.02em;
     display: inline-block;
     text-shadow: none;
@@ -388,7 +388,7 @@ ul {
     font-size: clamp(4rem, 10vw, 8rem);
     font-weight: 500;
     letter-spacing: -0.02em;
-    color: #e6e6e6;
+    color: #6b6b6b;
     background: none;
     text-shadow: none;
 }
