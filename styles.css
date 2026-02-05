@@ -181,6 +181,8 @@ ul {
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: 0.1em;
+    color: #F5F0E8;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .nav-menu {
@@ -193,7 +195,8 @@ ul {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     position: relative;
-    color: var(--color-hero-nav);
+    color: #F5F0E8;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .nav-menu a::after {
