@@ -388,24 +388,28 @@ ul {
 }
 
 .title-word {
-    font-family: 'Lora', serif;
-    font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 500;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    font-weight: 600;
+    /* Increased weight for readability */
     color: #3d3100;
     letter-spacing: 0.02em;
     display: inline-block;
     text-shadow: none;
+    font-style: italic;
+    /* Often gives that 'luxury' organic feel */
 }
 
 .title-word.large {
-    font-size: clamp(4rem, 8vw, 6.5rem);
-    font-weight: 500;
+    font-size: clamp(4.5rem, 9vw, 7rem);
+    font-weight: 600;
     letter-spacing: 0.02em;
     color: #3d3100;
     background: none;
     text-shadow: none;
     -webkit-text-stroke: 0;
     -webkit-text-fill-color: currentcolor;
+    font-style: italic;
 }
 
 /* Japanese Tagline */
