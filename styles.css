@@ -335,10 +335,23 @@ ul {
 
 .title-line {
     overflow: visible;
-    line-height: 1.1;
+    line-height: 1.2;
     position: relative;
     padding-bottom: 0;
-    margin-top: -0.3em;
+    margin-top: 0;
+}
+
+.title-content-wrapper {
+    display: inline-block;
+    background-color: rgba(61, 49, 0, 0.2);
+    padding: 2rem 3rem;
+    border-radius: 4px;
+    /* Optional: slight rounded corners for elegance */
+}
+
+.indent-right {
+    margin-left: 3rem;
+    /* Indent the second line */
 }
 
 .title-line-inner {
@@ -375,22 +388,24 @@ ul {
 }
 
 .title-word {
-    font-family: "AR Pcrystal Mincho JIS", "Shippori Mincho", "Yu Mincho", serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 400;
-    color: #6b6b6b;
+    font-family: 'Lora', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 500;
+    color: #3d3100;
     letter-spacing: 0.02em;
     display: inline-block;
     text-shadow: none;
 }
 
 .title-word.large {
-    font-size: clamp(4rem, 10vw, 8rem);
+    font-size: clamp(4rem, 8vw, 6.5rem);
     font-weight: 500;
-    letter-spacing: -0.02em;
-    color: #6b6b6b;
+    letter-spacing: 0.02em;
+    color: #3d3100;
     background: none;
     text-shadow: none;
+    -webkit-text-stroke: 0;
+    -webkit-text-fill-color: currentcolor;
 }
 
 /* Japanese Tagline */
@@ -407,13 +422,16 @@ ul {
 }
 
 .tagline-text {
-    font-family: var(--font-body);
-    font-size: clamp(1rem, 2vw, 1.3rem);
-    font-weight: 300;
-    color: var(--color-hero-subtext);
-    letter-spacing: 0.1em;
-    line-height: 1.8;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+    font-family: "Noto Sans JP", sans-serif;
+    /* Ensure clean look */
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 500;
+    color: #3d3100;
+    /* Match the main title color for consistency */
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    margin-top: 1rem;
+    text-shadow: none;
 }
 
 /* Description */
