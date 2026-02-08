@@ -82,23 +82,13 @@ ul {
 }
 
 .loading-screen::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-bg);
-    transform-origin: top;
-    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+    content: none;
 }
 
 .loading-screen.hidden {
+    opacity: 0;
     pointer-events: none;
-}
-
-.loading-screen.hidden::after {
-    transform: scaleY(0);
+    transition: opacity 1.5s ease-in-out;
 }
 
 .loading-logo {
@@ -234,13 +224,13 @@ ul {
 .hero {
     position: relative;
     height: 100vh;
-    min-height: 900px;
+    min-height: 700px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
     background: var(--color-bg);
-    padding-top: 150px;
+    padding-top: 170px;
 }
 
 /* Hero Background Video */
@@ -319,7 +309,7 @@ ul {
     position: relative;
     z-index: 1;
     padding: 0 8vw;
-    padding-bottom: 150px;
+    padding-bottom: 80px;
     width: 100%;
     max-width: 1600px;
 }
@@ -330,12 +320,12 @@ ul {
 
 /* Main Title Animation - biotope style */
 .hero-main-title {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .title-line {
     overflow: visible;
-    line-height: 1.2;
+    line-height: 1.0;
     position: relative;
     padding-bottom: 0;
     margin-top: 0;
@@ -343,15 +333,17 @@ ul {
 
 .title-content-wrapper {
     display: inline-block;
-    background-color: rgba(61, 49, 0, 0.2);
-    padding: 2rem 3rem;
-    border-radius: 4px;
-    /* Optional: slight rounded corners for elegance */
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
 }
 
-.indent-right {
-    margin-left: 3rem;
-    /* Indent the second line */
+.indent-medium {
+    margin-left: 0;
+}
+
+.indent-large {
+    margin-left: 0;
 }
 
 .title-line-inner {
@@ -389,33 +381,68 @@ ul {
 
 .title-word {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.5rem, 7vw, 5.5rem);
-    font-weight: 600;
-    /* Increased weight for readability */
+    font-weight: 300;
     color: #3d3100;
     letter-spacing: 0.02em;
     display: inline-block;
     text-shadow: none;
-    font-style: italic;
-    /* Often gives that 'luxury' organic feel */
+    font-style: normal;
 }
 
 .title-word.large {
-    font-size: clamp(4.5rem, 9vw, 7rem);
-    font-weight: 600;
+    font-family: 'Garamond', 'EB Garamond', serif;
+    font-weight: 400;
     letter-spacing: 0.02em;
     color: #3d3100;
     background: none;
     text-shadow: none;
     -webkit-text-stroke: 0;
     -webkit-text-fill-color: currentcolor;
-    font-style: italic;
+    font-style: normal;
+}
+
+.title-word.title-sub {
+    font-size: 48px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    color: #1a1a1a;
+    display: block;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.title-word.title-natural {
+    font-size: 99.5px;
+    font-weight: 300;
+    background: linear-gradient(to bottom, #5e5445 0%, #aa9e8f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.8;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+}
+
+.title-word.title-fragrance {
+    font-size: 139px;
+    font-weight: 300;
+    background: linear-gradient(to bottom, #5e5445 0%, #aa9e8f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.8;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
 }
 
 /* Japanese Tagline */
 .hero-tagline {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     overflow: hidden;
+    margin-top: 1rem;
 }
 
 .tagline-mask {
@@ -426,11 +453,10 @@ ul {
 }
 
 .tagline-text {
-    font-family: "Noto Sans JP", sans-serif;
-    /* Ensure clean look */
-    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    font-weight: 500;
-    color: #3d3100;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 37px;
+    font-weight: 300;
+    color: #545454;
     /* Match the main title color for consistency */
     letter-spacing: 0.05em;
     line-height: 1.6;
@@ -441,13 +467,13 @@ ul {
 /* Description */
 .hero-description-wrap {
     overflow: hidden;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .hero-description {
-    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-size: 19px;
     color: var(--color-hero-subtext);
-    line-height: 2.2;
+    line-height: 1.8;
     letter-spacing: 0.05em;
     opacity: 0;
     transform: translateY(-20px);

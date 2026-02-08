@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Remove loading screen from DOM after animation completes
         setTimeout(() => {
             loading.style.display = 'none';
-        }, 1200);
+        }, 1500);
     }, 1800);
 
     // Hero Video - Start after loading screen completes (first view appears)
