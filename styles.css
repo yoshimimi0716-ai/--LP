@@ -1334,8 +1334,8 @@ ul {
     }
 
     .hero-video {
-        object-position: 90% center;
-        /* Shift focus to curtain background */
+        object-position: 15% center;
+        /* Shift focus to curtain background (Left) */
     }
 
     .hero-content {
