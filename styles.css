@@ -137,7 +137,11 @@ ul {
     left: 0;
     width: 100%;
     z-index: 1000;
+    width: 100%;
+    z-index: 1000;
     padding: 1.5rem 3rem;
+    padding-left: max(3rem, env(safe-area-inset-left));
+    padding-right: max(3rem, env(safe-area-inset-right));
     transition: var(--transition-medium);
     opacity: 0;
     transform: translateY(-20px);
@@ -224,13 +228,17 @@ ul {
 .hero {
     position: relative;
     height: 100vh;
-    min-height: 700px;
+    height: 100dvh;
+    /* Mobile viewport height fix */
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
     background: var(--color-bg);
-    padding-top: 170px;
+    padding-top: 120px;
+    padding-top: max(120px, env(safe-area-inset-top));
+    /* Safe area support */
 }
 
 /* Hero Background Video */
@@ -413,7 +421,7 @@ ul {
 }
 
 .title-word.title-natural {
-    font-size: 99.5px;
+    font-size: clamp(60px, 8vw, 99.5px);
     font-weight: 300;
     background: linear-gradient(to bottom, #5e5445 0%, #aa9e8f 100%);
     -webkit-background-clip: text;
@@ -423,10 +431,11 @@ ul {
     opacity: 0.8;
     padding-bottom: 20px;
     margin-bottom: -20px;
+    line-height: 1.1;
 }
 
 .title-word.title-fragrance {
-    font-size: 139px;
+    font-size: clamp(70px, 10vw, 139px);
     font-weight: 300;
     background: linear-gradient(to bottom, #5e5445 0%, #aa9e8f 100%);
     -webkit-background-clip: text;
@@ -436,6 +445,7 @@ ul {
     opacity: 0.8;
     padding-bottom: 20px;
     margin-bottom: -20px;
+    line-height: 1.1;
 }
 
 /* Japanese Tagline */
@@ -1276,14 +1286,22 @@ ul {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 80%;
-        height: 100vh;
-        background: var(--color-bg);
+        width: 100%;
+        height: 100dvh;
+        background: rgba(248, 246, 243, 0.98);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
+        gap: 2.5rem;
+        /* Increased gap for better touch targets */
         transition: var(--transition-medium);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem;
+        /* Larger font for mobile menu */
     }
 
     .nav-menu.active {
@@ -1329,6 +1347,16 @@ ul {
 
     .title-word.large {
         font-size: clamp(3rem, 12vw, 5rem);
+    }
+
+    .title-word.title-natural {
+        font-size: clamp(3rem, 15vw, 5rem);
+        margin-bottom: -10px;
+    }
+
+    .title-word.title-fragrance {
+        font-size: clamp(3.5rem, 18vw, 6rem);
+        margin-bottom: -10px;
     }
 
     .hero-tagline {
