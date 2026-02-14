@@ -1369,7 +1369,8 @@ ul {
     }
 
     .tagline-text {
-        font-size: 0.95rem;
+        font-size: 20px;
+        /* Increased by approx 5px from 0.95rem */
     }
 
     .hero-description {
