@@ -1333,6 +1333,11 @@ ul {
         display: none;
     }
 
+    .hero-video {
+        object-position: 70% center;
+        /* Shift focus to curtain background */
+    }
+
     .hero-content {
         padding: 0 1.5rem;
     }
